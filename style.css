@@ -1,0 +1,109 @@
+/* import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rubik+Mono+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Jersey+10&family=Sigmar&display=swap');
+
+/*titre de page*/
+/* st.title*/
+h1 {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+/* st.header*/
+/*sous-titre*/
+h2 {
+    font-family: "Belanosima", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+/*st.subheader*/
+h3 {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 300px;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+h4 {
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+/*ligne de séparation de texte*/
+.st-emotion-cache-vdokb0 e1nzilvr5 {
+    color: #e8b5db;
+}
+
+/* st.text */
+.st-emotion-cache-183lzff {
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+/* texte titre bouton */
+/*.st-emotion-cache-ue6h4q */
+p {
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: #e8b5db;
+    padding: 1.25rem 0px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+/*barre deploy*/
+.st-emotion-cache-18ni7ap {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 2.875rem;
+    background: #000000;
+    color: #e8b5db;
+    outline: none;
+    z-index: 999990;
+    display: block;
+}
+
+.st-emotion-cache-12fmjuu {
+    background: #000000;
+    color: #e8b5db;
+}
+
+/* Sidebar */
+.st-emotion-cache-1gv3huu {
+    background: #000000;
+    background-color: #000000;
+}
+
+/*X de la sidebar */
+.st-emotion-cache-1pbsqtx {
+    color: #e8b5db;
+}
+
+/**/
