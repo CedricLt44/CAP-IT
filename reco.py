@@ -93,6 +93,7 @@ def show():
         # Sélection du genre
         genre = st.sidebar.selectbox("Genre recherché : ", liste_genres,index=liste_genres.index("Adventure"))
         st.session_state["genres"] = genre
+        # Afficher l'image du film sélectionné
     col_tire = st.columns([0.10, 0.80, 0.10])
     with col_tire[1]:
         st.title("FILMS")
@@ -101,7 +102,16 @@ def show():
     with col_films[1]:
         st.text("Ecrire le titre exact ponctuation comprise")
         title = st.text_input("Entrez le nom d'un film :", value="Alice in Wonderland")
-        recommended_movies = None  # Define recommended_movies with a default value
+        if title:
+            matching_titles = df[df["title_fr"].str.lower().str.contains(title.lower())]
+            if not matching_titles.empty:
+                id_title = matching_titles.index[0]
+                selected_film = df.loc[id_title]
+                image = "https://image.tmdb.org/t/p/original"+selected_film["poster_path"]
+                with st.sidebar:
+                    st.header("Film sélectionné:")
+                    st.subheader(selected_film["title_fr"])
+                    st.image(image, width=150, caption=selected_film["title_fr"])
         if title:
             title_x = title.lower()
             recommended_movies = get_recommendations(title_x, tfidf_matrix, genre)
@@ -117,8 +127,7 @@ def show():
                                 recommended_movies = new_recommendation
             else:
                 st.write(f"Le titre '{title}' n'a pas été trouvé dans le dataset.")
-
-            # Afficher les images des films
+        # Afficher les images des films
         url_diapo = """
         <style>
         .scroll-container {
@@ -126,6 +135,23 @@ def show():
             white-space: nowrap;
             padding: 10px;
             width: 100%;
+
+            /* Ajout des propriétés pour la barre de défilement */
+            scrollbar-width: thin; /* Largeur de la barre de défilement */
+            scrollbar-color: #e8b5db transparent; /*Couleur de la barre de défilement et de l'arrière-plan */
+        }
+        /* Pour les navigateurs WebKit (Chrome, Safari) */
+        .scroll-container::-webkit-scrollbar {
+            width: 20px; /* Largeur de la barre de défilement */
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #F0F2F6; /* Couleur de l'arrière-plan */
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #e8b5db; /* Couleur de la barre de défilement */
+            border-radius: 20px; /* Arrondi de la barre de défilement */
+            border: 3px solid #FFFFFF; /* Bordure de la barre de défilement */
+            height: 30px
         }
         .image-container {
             display: inline-block;
