@@ -91,7 +91,7 @@ liste_genres = [
 def show():
     with st.sidebar:
         # Sélection du genre
-        genre = st.sidebar.selectbox("Genre recherché : ", liste_genres)
+        genre = st.sidebar.selectbox("Genre recherché : ", liste_genres,index=liste_genres.index("Adventure"))
         st.session_state["genres"] = genre
     col_tire = st.columns([0.10, 0.80, 0.10])
     with col_tire[1]:
@@ -100,7 +100,7 @@ def show():
     col_films = st.columns([0.20, 0.60, 0.20])
     with col_films[1]:
         st.text("Ecrire le titre exact ponctuation comprise")
-        title = st.text_input("Entrez le nom d'un film :")
+        title = st.text_input("Entrez le nom d'un film :", value="Alice in Wonderland")
         recommended_movies = None  # Define recommended_movies with a default value
         if title:
             title_x = title.lower()
