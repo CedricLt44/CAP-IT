@@ -1,7 +1,7 @@
-streamlit==1.34.0
+streamlit==1.35.0
 streamlit-option-menu==0.3.12
+plotly == 5.21.0
 scikit-learn==1.5.0
-requests==2.31.0
 pandas==2.2.1
 numpy==1.26.4
 nltk==3.8.1
